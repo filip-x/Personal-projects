@@ -1,0 +1,39 @@
+﻿  uic add.ui
+  uic delete.ui
+  uic filter.ui
+  uic Lab10onLab9.ui
+  uic list.ui
+  uic list_mylist.ui
+  uic Mode A.ui
+  uic Mode B.ui
+  uic save_mylist.ui
+  uic update.ui
+  rcc Lab10onLab9.qrc
+  moc qcustomplot.h
+   RCC: Warning: No resources in 'D:\Facultate\Anul1Sem2\OOP\Labs\Lab13(onLab11)\Lab10(onLab9)\Lab10onLab9.qrc'.
+  action.cpp
+  dynamic_array.cpp
+  file_repository.cpp
+  html_file.cpp
+  Lab10onLab9.cpp
+  main.cpp
+  mylist_display.cpp
+  my_list_CSV.cpp
+  new_list_inmemory.cpp
+  qcustomplot.cpp
+D:\Facultate\Anul1Sem2\OOP\Labs\Lab13(onLab11)\Lab10(onLab9)\file_repository.cpp(42,7): warning C4834: discarding return value of function with 'nodiscard' attribute
+  repository.cpp
+  service.cpp
+D:\Facultate\Anul1Sem2\OOP\Labs\Lab13(onLab11)\Lab10(onLab9)\repository.cpp(43,7): warning C4834: discarding return value of function with 'nodiscard' attribute
+D:\Facultate\Anul1Sem2\OOP\Labs\Lab13(onLab11)\Lab10(onLab9)\service.cpp(29,18): warning C4834: discarding return value of function with 'nodiscard' attribute
+D:\Facultate\Anul1Sem2\OOP\Labs\Lab13(onLab11)\Lab10(onLab9)\service.cpp(42,18): warning C4834: discarding return value of function with 'nodiscard' attribute
+D:\Facultate\Anul1Sem2\OOP\Labs\Lab13(onLab11)\Lab10(onLab9)\service.cpp(57,18): warning C4834: discarding return value of function with 'nodiscard' attribute
+  tape.cpp
+  Tests.cpp
+  ui.cpp
+  validation.cpp
+  moc_Lab10onLab9.cpp
+  moc_mylist_display.cpp
+  qrc_Lab10onLab9.cpp
+  moc_qcustomplot.cpp
+  Lab10(onLab9).vcxproj -> D:\Facultate\Anul1Sem2\OOP\Labs\Lab13(onLab11)\x64\Debug\Lab10(onLab9).exe
