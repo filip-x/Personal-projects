@@ -1,0 +1,243 @@
+<h1>Resurse umane</h1>
+<style>
+	#accordion ul li ul li {
+	}
+	#accordion ul {
+		list-style: none;
+	}
+	
+	#accordion button:not(.sign) {
+		background-color: light-grey;
+		border: 0;
+		width: 100%;
+		height: auto;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		font-size: 1em;
+		font-weight: 700;
+	}
+	#accordion button:hover {
+		cursor: pointer;
+	}
+	#accordion li ul {
+		transition: 0.2s;
+		line-height: 1.25em;
+		overflow: hidden;
+		height: 0em;
+	}
+	.sign {
+		background-color: rgba(0,0,0,0);
+		border: 0;
+		height: auto;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 5px;
+		font-size: 1em;
+		font-weight: 700;
+		position: absolute;
+		width: 25px;
+		transition: 0.5s
+	}
+	
+</style>
+<script>
+console.log("resurse");
+function closeAllApart(elem) {
+	var B = document.getElementsByTagName("button");
+	for(var i = 0; i < B.length; i++) {
+		//B[i].nextElementSibling.style.display = "none";
+		if(elem.parentNode != B[i].parentNode) {
+			var sign = B[i].parentNode.getElementsByClassName("sign")[0];
+			nextUlSibling(B[i]).style.height = "0em";
+			if(sign.innerHTML == "-") {
+				//sign.style.transform = "rotate(180deg)";
+				sign.style.transition = '0.2s';
+				sign.style.transform = "rotate(-90deg)";
+				setTimeout(function() {
+					sign.style.transform = "rotate(0deg)";
+					sign.style.transition = '0s';
+					sign.innerHTML = "+";
+				}, 150);
+				sign.innerHTML = "+";
+			}
+		}
+	}
+}
+
+function nextUlSibling(elem) {
+	var el = elem;
+	while(el.nodeName.toLowerCase() != "ul")
+		el = el.nextElementSibling;
+	return el;
+}
+document.addEventListener('click', function (event) {
+	
+	if (!(event.target.nodeName.toLowerCase() == "button" || event.target.parentNode.nodeName.toLowerCase() == "button")) return;
+	closeAllApart(event.target);
+	var nextSib = nextUlSibling(event.target);
+	var n = nextSib.children.length;
+	var sign = event.target.parentNode.getElementsByClassName("sign")[0];
+	if(nextSib.style.height == n * 1.25 + "em") {
+		nextSib.style.height = "0em";
+		sign.style.transition = '0.2s';
+		sign.style.transform = "rotate(-90deg)";
+		setTimeout(function() {
+			sign.style.transform = "rotate(0deg)";
+			sign.style.transition = '0s';
+			sign.innerHTML = "+";
+			KeepFoot();
+		}, 150);
+		sign.innerHTML = "+";
+	}
+	else {
+		nextSib.style.height = n * 1.25 + "em"; 
+		sign.style.transition = '0.2s';
+		sign.style.transform = "rotate(90deg)";
+		setTimeout(function() {
+			sign.style.transform = "rotate(0deg)";
+			sign.style.transition = '0s';
+			sign.innerHTML = "-";
+			KeepFoot();
+		}, 150);
+		
+	}
+}, false);
+</script>
+<div id="accordion">
+	<ul>
+		<li><button class = "sign"> + </button><button>Catedra de Limba rom&acirc;nă</button>
+		<ul>
+			<li>1. Radu Maria - titular,gr. 2</li>
+			<li>2. Csiki Attila - titular, gr. 1</li>
+			<li>3. Damian Monica - titular, definitivat</li>
+			<li>4. Manu Camelia - titular,gr. 2</li>
+		</ul>
+		</li>
+		<li><button class = "sign"> + </button><button>Catedra de Matematică</button>
+		<ul>
+			<li>1. Mureşan Gabriel - titular, gr. 1</li>
+			<li>2. Benyi Iuliu - titular, gr. 1</li>
+			<li>3. Roman Silvia - titular, gr. 1</li>
+			<li>4. Szekely Tivadar - titular, gr. 1</li>
+			<li>5. Valea Ștefan</li>
+		</ul>
+		</li>
+		<li><button class = "sign"> + </button><button>Catedra de Fizică</button>
+		<ul>
+			<li>1. Bădulescu Sorin - titular, gr. 1</li>
+			<li>2. Bugar Paraschiva - titular, gr. 1</li>
+		</ul>
+		</li>
+		<li><button class = "sign"> + </button><button>Catedra de Chimie</button>
+		<ul>
+			<li>1. Oprişor Cornelia - titular, gr. 1</li>
+			<li>2. Mihaiu Simona - titular, gr. 1</li>
+			<li>3. Adam Paula - completare, definitivat</li>
+		</ul>
+		</li>
+		<li><button class = "sign"> + </button><button>Catedra de Biologie</button>
+		<ul>
+			<li>1. Oneț Anca - suplinitor, definitivat</li>
+			<li>2. Streza Andreea - suplinitor, gr. 1</li>
+			<li>3. Antal Lorand - suplinitor, debutant</li>
+		</ul>
+		</li>
+		<li><button class = "sign"> + </button><button>Catedra de Socio-umane</button>
+		<ul>
+			<li>1. Păpară Monica - titular, gr. 1</li>
+			<li>2. Tulea Corina &ndash; titular, gr. 1</li>
+			<li>3. Seicean Ildiko - suplinitor, definitivat</li>
+			<li>4. Hulpuş Eugen - titular, gr. 1</li>
+			<li>5. Lungu Claudia - psiholog școlar</li>
+		</ul>
+		</li>
+		<li><button class = "sign"> + </button><button>Catedra de Geografie</button>
+		<ul>
+			<li>1. Sas Ioan - titular, gr. 1</li>
+			<li>2. Aflat Anca - plata cu ora, gr. 1</li>
+		</ul>
+		</li>
+		<li><button class = "sign"> + </button><button>Catedra de Religie</button>
+		<ul>
+			<li>1. Petreuș Florin &ndash; suplinitor, debutant</li>
+			<li>2. Szekely Zoltan - suplinitor, debutant</li>
+			<li>3. Fățan Vasilica - titular, definitivat</li>
+		</ul>
+		</li>
+		<li><button class = "sign"> + </button><button>Catedra de Informatică</button>
+		<ul>
+			<li>1. Maier Cornelia - titular, gr. 1</li>
+			<li>2. S&acirc;rbu Margareta - titular, gr. 1</li>
+			<li>3. Bercea-Engels Claudia - titular, gr.1</li>
+		</ul>
+		</li>
+		<li><button class = "sign"> + </button><button>Catedra de Limba franceză</button>
+		<ul>
+			<li>1. Vandor Camelia - suplinitor, definitivat</li>
+		</ul>
+		</li>
+		<li><button class = "sign"> + </button><button>Catedra de Limba engleză</button>
+		<ul>
+			<li>1. Muica Violeta - titular, gr. 1</li>
+			<li>2. Vandor Camelia - suplinitor, definitivat</li>
+			<li>3. Roman Daliana - titular, definitivat</li>
+		</ul>
+		</li>
+		<li><button class = "sign"> + </button><button>Catedra de Limba germană</button>
+		<ul>
+			<li>1. Cărăbaș Nicoleta - titular, gr. 2</li>
+			<li>2. Iancu Andra - titular, definitivat</li>
+		</ul>
+		</li>
+		<li><button class = "sign"> + </button><button>Catedra de arte</button>
+		<ul>
+			<li>Petreuș Florin - suplinitor, debutant</li>
+			<li>Csiki Attila - titular, gr. 1</li>
+		</ul>
+		</li>
+		<li><button class = "sign"> + </button><button>Catedra de Educaţie fizică</button>
+		<ul>
+			<li>1. Ciucu Cătălin - titular, definitivat</li>
+			<li>2. Popescu Nicolae - suplinitor, definitivat</li>
+		</ul>
+		</li>
+		<li><button class = "sign"> + </button><button>Catedra de Economie</button>
+		<ul>
+			<li>1. Pop Ovidiu Eugen - titular, definitivat</li>
+			<li>2. Vasiu Emanuela - suplinitor, definitivat</li>
+			<li>3. Aldea Ana &ndash; suplinitor, definitivat</li>
+			<li>4. Custelcean Corina - titular, gr. 1</li>
+			<li>5. Morar Minodora - suplinitor, debutant</li>
+		</ul>
+		</li>
+		<li><button class = "sign"> + </button><button>Ingineri</button>
+		<ul>
+			<li>1. Crăciun Constantin - titular, gr. 1</li>
+			<li>2. Moldovan Rodica - titular,gr. 1</li>
+			<li>3. Borcea Vasile - titular, gr. 1</li>
+			<li>4. Cucean Maria - titular, gr. 1</li>
+			<li>5. Szoke Sabin - titular, definitivat</li>
+		</ul>
+		</li>
+		<li><button class = "sign"> + </button><button>Maiştrii instructori</button>
+		<ul>
+			<li>1. Pepene Bogdan - titular, gr. 2</li>
+			<li>2. Rus Nicolae - titular, definitivat</li>
+			<li>3. Morariu Ioan - titular, gr. 1</li>
+			<li>4. Racea Teodor - titular, gr. 1</li>
+			<li>5. Ganea Liviu - suplinitor, definitivat</li>
+			<li>6. Laţiu Gheorghe - titular, gr. 1</li>
+		</ul>
+		</li>
+	</ul>
+</div>
+
+<br>
+Încadrări an școlar 2018-2019: <a style="color:blue" href="http://sngmedias.ro/documente/incadrari2018-2019.pdf">Aici</a>
+
+<p>Conducerea școlii</p>
+
+<p>Director: CUSTELCEAN MARIANA CORINA- profesor chimie/economie, gr.1</p>
+
+<p>Director adjunct: CSIKI ATTILA- profesor lb.rom&acirc;nă/lb.maghiară gr.1</p>
+<br><br><br><br><br><br><br>

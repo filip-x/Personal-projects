@@ -1,0 +1,142 @@
+/* CSS Document */
+/* https://coolors.co/b0d0d3-c08497-f7af9d-f7e3af-f3eec3 */
+/* Top Nav */
+#menu1 {
+	display: inline-block;
+	align-items: center;
+	position: fixed;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	height: 50px;
+	width: calc(100% + 18px);
+	background-color: #C08497;
+	box-shadow: 0px 2px 5px 2px black;
+	z-index: 9999;
+	margin: 0px 0px 0px -10px;
+}
+#menuList {
+	list-style-type: none;
+	position: absolute;
+	overflow: hidden;
+	text-align: center;
+	top: 10px;
+	left: 90px;
+	margin: 0px;
+	padding: 0px;
+	display:block;
+	float:left;
+	margin-right: 5px;
+	font-family: Calibri;
+	font-size: 22px;
+	color: white;
+	text-shadow: .5px .5px .5px #E8E8E8;
+}
+
+#socialButtons {
+	position: absolute;
+	left: calc(100% - 180px);
+	top: 15px;
+	size: inherit;
+}
+
+.social:hover {
+	opacity: 1.0;
+}
+
+.social {
+	display: block;
+	float: left;
+	margin-right: 5px;
+	position: relative;
+	height: 30px;
+	width: auto;
+	opacity: 1.0;
+	top: -3px;
+}
+/* Links menu */
+#menu2 {
+	position: fixed;
+	top: 49px;
+	height: 25px;
+	float: left;
+	width: 100%;
+	left: 10px;
+	text-align: center;
+	text-align-last: center;
+	z-index: 10000;
+}
+
+#menuLinks {
+	position: relative;
+	float: left;
+	top: 0%;
+	margin-top: 0px;
+	margin-left: 0px;
+	padding-left: 0px;
+	text-align: center;
+	width: 80%;
+	left: 50%;
+	transform: translateX(-50%);
+	border-color: #C08497;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	background-color: #C08497;
+	height: 100%;
+	-webkit-box-shadow: 0px 10px 6px -7px black;
+	box-shadow: 0px 10px 6px -7px black;
+}
+
+@keyframes DropDown {
+	from {
+		height: 0%;
+	}
+	to{
+		height: 100%;
+	}
+}
+
+.VisibleDropDown {
+	display: none;
+	position: absolute;
+	background-color: #C08497;
+	width: 200%;
+	color: white;
+	border-bottom-left-radius: 00px;
+	border-bottom-right-radius: 10px;
+	-webkit-box-shadow: 0px 10px 6px -7px black;
+	box-shadow: 3px 3px 6px -1px black;
+}
+.navLink:hover .VisibleDropDown {
+	display: table;
+}
+
+.InvisibleDropDown {
+	display: none;
+}
+
+.navLink {
+	display: inline-block;
+	margin-left: 10px;
+	position: relative;
+	vertical-align: middle;
+}
+.menu2Link {
+	color: #FFFFFF;
+	font-style: italic;
+	font-family: expletus-sans;
+	font-weight: 600;
+	font-size: 13.5px;
+	text-decoration: none;
+}
+@keyframes menu2LinkAnim {
+	from {
+		color: #FFFFFF;
+	}
+	to {
+		color: #43D8FF;
+	}
+}
+.menu2Link:hover {
+	animation: menu2LinkAnim 0.2s forwards;
+}

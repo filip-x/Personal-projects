@@ -1,0 +1,390 @@
+﻿<script>// CCD ADD IT DUD</script>
+<h1>Comisii</h1>
+<style>
+	#accordion ul li ul li {
+	}
+	#accordion ul {
+		list-style: none;
+	}
+	#accordion ul li div {
+		overflow-y:scroll;
+	}
+	
+	#accordion button:not(.sign) {
+		background-color: light-grey;
+		border: 0;
+		width: 100%;
+		height: auto;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		font-size: 1em;
+		font-weight: 700;
+		padding-left:25px;
+	}
+	#accordion button:hover {
+		cursor: pointer;
+	}
+	#accordion li div {
+		transition: 0.2s;
+		line-height: 1.25em;
+		overflow: hidden;
+		height: 0em;
+		width: 90%;
+		left: 5%;
+		position: relative;
+		border-left: 4px solid #c08497;
+		border-right: 1px solid black;
+	}
+	#accordion li ul {
+		transition: 0.2s;
+		line-height: 1.25em;
+		overflow: hidden;
+		height: 0em;
+	}
+	.sign {
+		background-color: rgba(0,0,0,0);
+		border: 0;
+		height: auto;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 5px;
+		font-size: 1em;
+		font-weight: 700;
+		position: absolute;
+		width: 25px;
+		transition: 0.5s
+	}
+	
+</style>
+<script>
+console.log("resurse");
+function closeAllApart(elem) {
+	var B = document.getElementsByTagName("button");
+	for(var i = 0; i < B.length; i++) {
+		//B[i].nextElementSibling.style.display = "none";
+		if(elem.parentNode != B[i].parentNode) {
+			var sign = B[i].parentNode.getElementsByClassName("sign")[0];
+			nextDivSibling(B[i]).style.height = "0em";
+			if(sign.innerHTML == "-") {
+				//sign.style.transform = "rotate(180deg)";
+				sign.style.transition = '0.2s';
+				sign.style.transform = "rotate(-90deg)";
+				setTimeout(function() {
+					sign.style.transform = "rotate(0deg)";
+					sign.style.transition = '0s';
+					sign.innerHTML = "+";
+				}, 150);
+				sign.innerHTML = "+";
+			}
+		}
+	}
+}
+
+function nextDivSibling(elem) {
+	var el = elem;
+	while(el && el.nodeName.toLowerCase() != "div")
+		el = el.nextElementSibling;
+	return el || {style: {height: 0}};
+}
+document.addEventListener('click', function (event) {
+	if (!(event.target.nodeName.toLowerCase() == "button" || event.target.parentNode.nodeName.toLowerCase() == "button")) return;
+	closeAllApart(event.target);
+	var nextSib = nextDivSibling(event.target);//event.target.nextElementSibling;
+	var n = 10;//nextSib.children.length;
+	var sign = event.target.parentNode.getElementsByClassName("sign")[0];
+	if(nextSib.style.height == n * 1.25 + "em") {
+		nextSib.style.height = "0em";
+		sign.style.transition = '0.2s';
+		sign.style.transform = "rotate(-90deg)";
+		setTimeout(function() {
+			sign.style.transform = "rotate(0deg)";
+			sign.style.transition = '0s';
+			sign.innerHTML = "+";
+			KeepFoot();
+		}, 150);
+		sign.innerHTML = "+";
+	}
+	else {
+		nextSib.style.height = n * 1.25 + "em"; 
+		sign.style.transition = '0.2s';
+		sign.style.transform = "rotate(90deg)";
+		setTimeout(function() {
+			sign.style.transform = "rotate(0deg)";
+			sign.style.transition = '0s';
+			sign.innerHTML = "-";
+			KeepFoot();
+		}, 150);
+		
+	}
+}, false);
+</script>
+<div id="accordion">
+	<ul>
+		<li><button class = "sign"> + </button><button>Consiliul de administraţie</button>
+		<div>
+			<p><strong>PREŞEDINTE</strong><br>
+            PROF. CUSTELCEAN CORINA - DIRECTOR<br>
+            <br>
+            <strong>MEMBRI</strong><br>
+            - PROF. CSIKI ATTILA, DIRECTOR ADJUNCT<br>
+            - PROF. VALEA ȘTEFAN, REPREZENTANT AL CONSILIULUI PROFESORAL<br>
+            - PROF. OPRIŞOR CORNELIA, REPREZENTANT AL CONSILIULUI PROFESORAL<br>
+            - NASTE DIANA, PREŞEDINTE CONSILIUL REPREZENTATIV AL PĂRINŢILOR<br>
+            - PASC VIOREL, REPREZENTANT AL CONSILIULUI LOCAL MEDIAŞ<br>
+            - POPA FELICIA , REPREZENTANT AL PRIMARULUI MEDIAŞ<br>
+            - VEZA NICOLAE, REPREZENTANT AGENȚI ECONOMICI<br> 
+            - STRAVA CĂTĂLIN, REPREZENTANT AGENȚI ECONOMICI</p>
+			<br>
+			- SZOKE SABIN - SECRETAR
+			<br>
+            <br>
+            LA ŞEDINŢELE CONSILIULUI DE ADMINISTRAŢIE PARTICIPĂ FĂRĂ DREPT DE VOT:<br>
+            - MOLDOVAN RODICA, LIDER SINDICAT ŞCOALĂ<br>
+            - STOIA DENIS IULIAN, REPREZENTANT CONSILIUL ELEVILOR<p></p>
+		</div>
+		</li>
+		<li><button class = "sign"> + </button><button>Comisia pentru curriculum</button>
+		<div>
+			<p><strong>PREȘEDINTE:</strong>  </p>
+			<p>PROF. CSIKI ATTILA
+            </p><p></p>
+			<p><strong>MEMBRII:</strong></p>
+			<p><strong>RESPONSABILII DE ARII CURRICULARE-</strong><br>
+			- PROF.&nbsp; MUICA VIOLETA, LIMBĂ ŞI COMUNICARE<br>
+            - PROF. OPRIŞOR CORNELIA, MATEMATICĂ ŞI ŞTIINŢE<br>
+            - PROF. PĂPARĂ MONICA, OM ŞI SOCIETATE<br>
+			- ING. CUCEAN MARIA, TEHNOLOGII</p>
+		</div>
+		</li>
+		<li><button class = "sign"> + </button><button>Comisia SCIM (Sistemul de control intern managerial)</button>
+		<div>
+			<p>- PROF. CSIKI ATTILA, PREȘEDINTE<br>
+            - PROF. OPRIȘOR CORNELIA, VICEPREȘEDINTE<br>
+			- PROF. MOLDOVAN RODICA, MEMBRU<br> 
+			- PROF. MUREȘAN GABRIEL, MEMBRU<br>
+            - ING. SIST. MEDEȘAN ANDREEA, SECRETAR<br>
+            - CONTABIL ȘEF, VULCAN MARIA, MEMBRU<br>
+            - SECRETAR ȘEF, NEGRU MARGARETA, MEMBRU<br>
+            - ADMINISTRATOR, FLOREA IOAN, MEMBRU<br>
+            - RESP. CDI, PUSTAI CRISTINA, MEMBRU<br>
+			</p>
+		</div>
+		</li>
+		<li><button class = "sign"> + </button><button>Comisia de evaluare şi asigurare a calităţii</button>
+		<div>
+			<p>- Prof. Cucean Maria - responsabil<br>
+            - Prof. Pop Ovidiu Eugen- membru<br>
+			- Prof. Roman Silvia - membru<br>
+			- Prof. Moldovan Rodica - membru<br>
+            - Medeșan Andreea - membru<br>
+            -&nbsp;Pasc Viorel&nbsp;- reprezentant Consiliul Local Mediaş <br>
+            - Țânț Andrada - reprezentant Consiliul elevilor SNG<br>
+            - Stroia Camelia - reprezentant Consiliul reprezentativ al părinţilor SNG</p>
+		</div>
+		</li>
+		<li><button class = "sign"> + </button><button>Comisia  ritmicitatea notării şi combaterea absenteismului</button>
+		<div>
+			<p>
+			- PROF. MUICA VIOLETA<br>
+			- PROF. VANDOR CAMELIA<br>
+			- PROF. SAS IOAN
+			</p>
+		</div>
+		</li>
+		<li><button class = "sign"> + </button><button>Comisia de inventariere</button>
+		<div>
+			<p>
+            - PROF. CUSTELCEAN CORINA - RESPONSABIL<br>
+            - PROF. CSIKI ATTILA<br>
+            - PROF. OPRIȘOR CORNELIA<br>
+            - PROF. ROMAN SILVIA<br>
+            - PROF. RACEA TEODOR<br>
+            - PROF. SZOKE SABIN<br>
+            - PROF. RUS NICOLAE<br>
+          	- ADM. FLOREA IOAN<br>
+          	- SECR. ȘEF, NEGRU MARGARETA<br>
+          	- ING. SIST. MEDEȘAN ANDREEA<br>
+          	- RESP. CDI, PUSTAI CRISTINA<br>
+          	<br>
+			</p>
+		</div>
+		</li>
+		<li><button class = "sign"> + </button><button>Comisia SSM (SECURITATEA ȘI SĂNĂTATEA ÎN MUNCĂ)</button>
+		<div>
+			<p>- PROF. CUSTELCEAN CORINA - PREȘEDINTE<br>
+			- AVRAM CONSTANTIN - RESPONSABIL ISU<br>
+			- PEPENE BOGDAN - RESPONSABIL SSM<br>
+			- TOGAN IONEL<br>
+			- SZOKE SABIN</p><br>
+			- RACEA TEODOR<br>
+            - ADM. FLOREA IOAN<br>
+            - CONT. ȘEF VULCAN MARIA<br>
+            - MED. BARNA DIANA<br>
+		</div>
+		</li>
+		<li><button class = "sign"> + </button><button>Comisia pentru proiecte şi programe extracurriculare</button>
+		<div>
+			<p>
+            - PROF. PĂPARĂ MONICA - RESPONSABIL<br>
+            - PROF. CSIKI ATTILA<br>
+            - PROF. RADU MARIA<br>
+         	- PROF. SAS IOAN<br>
+            - PROF. ONEȚ ANCA<br>
+            <br></p>
+		</div>
+		</li>
+		<li><button class = "sign"> + </button><button>Comisia pt. prevenirea și eliminarea violenței, a faptelor de corupție și discriminării în mediul școlar și promovarea interculturalității</button>
+		<div>
+			<p>- PROF. CSIKI ATTILA - RESPONSABIL
+			<br>- PSIHOLOG LUNGU CLAUDIA
+			<br>- PROF. BENYI IULIU - CONSILIER PT. INTEGRITATE
+			<br>- PROF. MAIER CORNELIA - SECRETAR
+			<br>- PROF. MANU CAMELIA
+			<br>- PROF. MUICA VIOLETA
+			<br>- PROF. OPRIȘOR CORNELIA</p>
+			<br>- PROF. ONEȚ ANCA<p></p>
+			<br>- PROF. PĂPARĂ MONICA<p></p>
+			<br>- PROF. SAS IOAN<p></p>
+			<br>- PROF. CUCEAN MARIA<p></p>
+			<br>- PROF. POP OVIDIU<p></p>
+			<br>- PROF. BUGAR PARASCHIVA<p></p>
+			<br>- CONTABIL ȘEF VULCAN MARIA<p></p>
+			<br>- SECRETAR ȘEF NEGRU MARGARETA<p></p>
+			<br>- BOGDAN ȘTEFANIA - REPREZENTANT CSE<p></p>
+			<br>- NASTE DIANA - REPREZENTANT CRP<br>
+		</div>
+		</li>
+		<li><button class = "sign"> + </button><button>Comisia de consiliere, orientare şcolară şi a diriginţilor</button>
+		<div>
+			<p>- PĂPARĂ MONICA - RESPONSABIL<br>
+			- PSIH. LUNGU CLAUDIA<br>
+            - PROF. RADU MARIA<br>
+            - PROF. TEGLAȘ TEODORA<br>
+            - PROF. MANU CAMELIA<br>
+            - PROF. CSIKI LIGIA<br>
+            - PROF. SÎRBU MARGARETA<br>
+            - PROF. CIUCU CĂTĂLIN<br>
+            - PROF. MUICA VIOLETA<br>
+            - PROF. SAS IOAN<br>
+            - PROF. MIHAIU SIMONA<br>
+            - PROF. RUS NICOLAE<br>
+            - PROF. POP OVIDIU<br>
+            - PROF. TULEA CORINA<br>
+            - PROF. SZEKELY TIVADAR<br>
+            - PROF. DAMIAN MONICA<br>
+            - PROF. MUREŞAN GABRIEL<br>
+            - PROF. HULPUŞ EUGEN<br>
+            - PROF. PEPENE BOGDAN<br>
+            - PROF. ROMAN SILVIA<br>
+            - PROF. BENYI IULIU<br>
+            - PROF. SZOKE SABIN<br>
+            - PROF. BORCEA VASILE<br>
+            - PROF. CUCEAN MARIA<br>
+            - PROF. VANDOR CAMELIA<br>
+            - PROF. MOLDOVAN RODICA MARIA<br>
+            - PROF. MORAR MINODORA<br>
+            - PROF. BUGAR PARASCHIVA<br>
+			- PROF. ONEȚ ANCA<br>
+			- STROIA CAMELIA - RESPONSABIL CRP<br>
+			- ȚÂNȚ ANDRADA - REPREZENTANT CSE<br>
+            </p>
+		</div>
+		</li>
+		<li><button class = "sign"> + </button><button>Comisia ORAR</button>
+		<div><p>
+			- PROF. MUICA VIOLETA<br>
+			- PROF.VANDOR CAMELIA<br>
+			- PROF. SAS IOAN<br>
+		</div>
+		</li>
+		<li><button class = "sign"> + </button><button>Comisia de acordare a burselor şi a ajutoarelor sociale</button>
+		<div>
+			<p>- PROF. CSIKI ATTILA, PREŞEDINTE<br>
+			- PROF. TEGLAȘ TEODORA<br>
+            - ING. SIST. MEDEŞAN ANDREEA<br>
+            - BIBLIOTECAR, PUSTAI CRISTINA<br>
+            - SECRETAR , BÎRSAN SANDA<br>
+            - SECRETAR ȘEF, NEGRU MARGARETA<br>
+            - CONTABIL ȘEF, VULCAN MARIA;<br>                      
+            - CONTABIL, MARCU CLAUDIA<br> 
+            - PROF. BĂDULESCU SORIN<br>
+            - PROF. SZOKE SABIN<br>
+            - PROF. CUCEAN MARIA<br>
+            - PROF. RUS NICOLAE<br>
+            - PROF. TULEA CORINA<br>
+            - PROF. PEPENE BOGDAN<br>
+            - PROF. BORCEA VASILE<br>
+			</p>
+		</div>
+		</li>
+		<li><button class = "sign"> + </button><button>Comisia pentru perfecționare și formare continuă</button>
+		<div>
+			<p>- PROF. CUSTELCEAN CORINA, PREŞEDINTE<br>
+            - PROF. MORAR MINODORA, RESPONSABIL<br>
+            - PROF. RADU MARIA<br>
+			- PROF. DAMIAN MONICA<br>
+			- PROF. SZOKE SABIN</p>
+		</div>
+		</li>
+		<li><button class = "sign"> + </button><button>Comisia pentru parteneriate și  promovarea imaginii şcolii</button>
+		<div>
+			<p>- PROF. CSIKI ATTILA<br>
+            - PROF. MAIER CORNELIA<br>
+			- ING.SIST. MEDEȘAN ANDREEA</p>
+		</div>
+		</li>
+		<li><button class = "sign"> + </button><button>Comisia pentru parteneriate</button>
+		<div><p>
+			- PROF. CUSTELCEAN CORINA - PREȘEDINTE<br>
+			- PROF. RACEA TEODOR<br>
+			- PROF.RUS NICOLAE<br>
+			- PROF. SZOKE SABIN<br>
+			- PROF. OPRIȘOR CORNELIA<br></p>
+		</div>
+		</li>
+		<li><button class = "sign"> + </button><button>Comisia de atribuire contracte de achiziție și recepție achiziții</button>
+		<div>
+			<p>- CUSTELCEAN CORINA, DIRECTOR&nbsp;<br>
+            - VULCAN MARIA, CONTABIL ȘEF<br>
+          	- FLOREA IOAN, ADMINISTRATOR<br>
+          	- PROF. BORCEA VASILE<br>
+          	- PROF. CSIKI ATTILA<br>
+          	<br>
+			</p>
+		</div>
+		</li>
+		<li><button class = "sign"> + </button><button>Comisia de administrare a școlii</button>
+		<div>
+			<p>- FLOREA IOAN, ADMINISTRATOR<br>
+			- VULCAN MARIA, CONTABIL ȘEF<br>
+            - PUSTAI CRISTINA, RESPONSABIL CDI<br>
+			</p>
+		</div>
+		</li>
+		<li><button class = "sign"> + </button><button>Consiliul reprezentativ al părinţilor</button>
+		<div><p>
+			- STROIA CAMELIA, PREŞEDINTE <br>
+			- CARACAȘ EVDOCHIA, VICEPREŞEDINTE<br>
+			- VINTILĂ SANDA, SECRETAR</p>
+		</div>
+		</li>
+		<li><button class = "sign"> + </button><button>Consiliul elevilor</button>
+		<div>
+			<p><strong>Președinte</strong>:</p>
+			<p>- Achimeț Clarissa</p>
+			<p><strong>Vicepreședinte</strong>:</p>
+			<p>- Soare Cristian</p>
+			<p><strong>Secretar</strong>:</p>
+			<p>- Țânț Andrada</p>
+			<p><strong>Profesor coordonator:</strong> PĂPARĂ MONICA</p>
+		</div>
+		</li>
+	</ul>
+</div>
+
+<p>Conducerea școlii</p>
+
+<p>Director: CUSTELCEAN MARIANA CORINA- profesor chimie/economie, gr.1</p>
+
+<p>Director adjunct: CSIKI ATTILA- profesor lb.rom&acirc;nă/lb.maghiară gr.1</p>
+<br><br><br><br><br><br><br>

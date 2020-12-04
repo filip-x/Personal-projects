@@ -1,0 +1,18 @@
+﻿{
+  "DISPLAY_NAME_1": {
+    "dropdown": {
+      "DISPLAY_NAME11": {
+		  "link":"LINK",
+		  "redirect":false
+	  },
+      "DISPLAY_NAME12": {
+		  "link":"LINK",
+		  "redirect":false
+	  }
+    }
+  },
+  "DISPLAY_NAME_2": {
+	  "link":"LINK",
+	  "redirect":false
+  }
+}

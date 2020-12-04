@@ -1,0 +1,92 @@
+// ATENTIE LA VIRGULE SI PARANTEZE !
+{
+	"ACASA": {
+		"link":"https://sngmedias.ro",
+		"redirect":false
+	},
+	"PREZENTARE": {
+		"dropdown": {
+			"Descriere": {
+				"link":"https://sngmedias.ro/pages/descriere.html",
+				"redirect":true
+			},
+			"Istoric": {
+				"link":"https://sngmedias.ro/pages/prezentarea-scolii/istoric.html",
+				"redirect":true
+			},
+			"Profilul actual": {
+				"link":"https://sngmedias.ro/pages/prezentarea-scolii/profilul_actual.html",
+				"redirect":true
+			},
+			"Planul de actiune": {
+				"link":"https://sngmedias.ro/documente/PAS_SNG_2013-2018_FINAL.pdf",
+				"redirect":false
+			},
+			"ROFUIP": {
+				"link":"https://sngmedias.ro/documente/ROFUIP2019.pdf",
+				"redirect":false
+			},
+			"Comisii": {
+				"link":"https://sngmedias.ro/pages/prezentarea-scolii/comisii.html",
+				"redirect":true
+			},
+			"Buget": {
+				"link":"https://sngmedias.ro/pages/prezentarea-scolii/BugetSNG2018.pdf",
+				"redirect":false
+			},
+		}
+	},
+	"OFERTA ȘCOLARĂ": {
+		"dropdown": {
+			"An scolar 2019-2020": {
+				"link":"https://sngmedias.ro/pages/oferta-scolara/2019-2020.html",
+				"redirect":true
+			}
+		}
+	},
+	"PLAN DE ȘCOLARIZARE": {
+		"link":"https://sngmedias.ro/pages/plan_de_scolarizare.html",
+		"redirect":true
+	},
+	"RESURSE": {
+		"dropdown": {
+			"Resurse umane": {
+				"link":"https://sngmedias.ro/pages/resurse_umane.html",
+				"redirect":true
+			},
+			"Resurse materiale": {
+				"link":"https://sngmedias.ro/pages/resurse_materiale.html",
+				"redirect":true
+			},
+			
+		}
+	},
+	"ORAR  ": {
+		"dropdown": {
+			"Școală": {
+				"link":"https://sngmedias.ro/documente/orar_scoala_2018_2019.pdf",
+				"redirect":false
+			},
+			"Ateliere": {
+				"link":"https://sngmedias.ro/documente/orar_ateliere_2018_2019.pdf",
+				"redirect":false
+			}
+		}
+	},
+	"PROIECTE": {
+	    "dropdown": {
+			"Proiectul ROSE": {
+				"link":"https://sngmedias.ro/pages/rose.html",
+				"redirect":true
+			},
+			"Proiecte Scolare": {
+				"link":"https://sngmedias.ro/pages/proiecte.html",
+				"redirect":true
+			},
+		}
+	},
+	"CONTACT": {
+	    "link": "https://sngmedias.ro/pages/contact.html",
+	    "redirect": true
+	}
+}
